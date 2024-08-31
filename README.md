@@ -116,5 +116,60 @@ SHOWTIME ||--o{ RESERVATION : includes
     );
 ```       
 
+## API Design
+
+The Movie Booking System exposes the following RESTful APIs for interaction between the frontend and backend:
+
+    | Method | Endpoint          | Description                                         |
+    |--------|-------------------|-----------------------------------------------------|
+    | GET    | /api/movies        | Retrieves a list of all movies                      |
+    | GET    | /api/movies/{id}   | Retrieves details of a specific movie by ID         |
+    | POST   | /api/reservations  | Creates a new reservation                           |
+    | GET    | /api/reservations  | Retrieves all reservations for the logged-in user   |
+    | POST   | /api/auth/login    | Authenticates a user and returns a JWT token        |
+    | POST   | /api/auth/register | Registers a new user                                |
+
+### Frontend-Backend Interaction
+
+The frontend interacts with the backend via these APIs by sending HTTP requests. For example, when a user selects a movie and makes a reservation, the frontend sends a POST request to the `/api/reservations` endpoint with the reservation details.
+
+## Component Design
+
+The system is divided into the following components:
+
+- **Frontend:** Built with React.js, responsible for rendering the user interface and making API calls to the backend.
+- **Backend:** Developed using Node.js with Express, handling business logic, API endpoints, and communication with the database.
+- **Authentication:** JWT-based authentication using Passport.js to secure the API endpoints.
+- **Payment Gateway:** Integration with a payment gateway (e.g., Stripe) to handle payments securely.
+
+Each component is designed to be modular and scalable, allowing for easy updates and maintenance.
+
+## Scalability and Performance
+
+To ensure the system can handle increased traffic, the following strategies are planned:
+
+- **Load Balancing:** Use of a load balancer to distribute incoming traffic across multiple backend servers.
+- **Caching:** Implementation of caching mechanisms (e.g., Redis) to reduce database load and improve response times.
+- **Database Optimization:** Indexing and query optimization in the database to handle large volumes of data efficiently.
+
+## Security Design
+
+Security is a critical aspect of the Movie Booking System:
+
+- **User Authentication:** JWT tokens are used for authenticating users, ensuring that only authorized users can access certain endpoints.
+- **Authorization:** Role-based access control (RBAC) to restrict access to specific resources based on user roles (e.g., admin, user).
+- **Data Security:** All sensitive data, including passwords and payment information, is encrypted. HTTPS is enforced for all communications.
+- **Payment Security:** PCI-DSS compliance is ensured for handling payment data securely through the integrated payment gateway.
+
+## Deployment Strategy
+
+The application will be deployed using the following strategy:
+
+- **Hosting:** The backend and frontend will be deployed on a cloud provider (e.g., AWS, Heroku).
+- **CI/CD Pipelines:** Continuous Integration and Continuous Deployment (CI/CD) pipelines will be set up using GitHub Actions or Jenkins to automate testing and deployment.
+- **Monitoring and Logging:** Monitoring tools (e.g., Prometheus, Grafana) and logging solutions (e.g., ELK Stack) will be used to track system performance and diagnose issues post-deployment.
+
+
+
 
 For more details on system design and implementation, please refer to the [Detailed Documentation](docs/detailed_documentation.md).
