@@ -3,10 +3,10 @@ Movie Ticket Booking System
 
 ## System Design
 
-    - **Frontend:** A user interface for customers to browse movies, view showtimes, and make reservations.
-    - **Backend:** A REST API that handles business logic, processes user requests, and interacts with the database.
-    - **Database:** A relational database to store information about movies, theaters, showtimes, users, and reservations.
-    - **Admin Dashboard:** An interface for theater administrators to manage movies, schedules, manage reservations manually and view booking statistics.
+ - **Frontend:** A user interface for customers to browse movies, view showtimes, and make reservations.
+ - **Backend:** A REST API that handles business logic, processes user requests, and interacts with the database.
+ - **Database:** A relational database to store information about movies, theaters, showtimes, users, and reservations.
+ - **Admin Dashboard:** An interface for theater administrators to manage movies, schedules, manage reservations manually and view booking statistics.
 
 ### Architecture Diagram
 
@@ -18,8 +18,9 @@ Movie Ticket Booking System
         D -->|Returns Data| C;
         C -->|Sends Response| B;
         B -->|Displays Data| A;
+    ```
 
-   ![High Leveel System Architecture of CineSeat](images\CineSeat_SystemArchitecture-2024-08-31-130640.png)
+![High Leveel System Architecture of CineSeat](images/CineSeat_SystemArchitecture-2024-08-31-130640.png)
 
 ## Database Schema
 
@@ -70,8 +71,9 @@ Movie Ticket Booking System
             MOVIE ||--o{ SHOWTIME : has
             THEATER ||--o{ SHOWTIME : hosts
             SHOWTIME ||--o{ RESERVATION : includes
+        ```
     
-     ![ER diagram for CineSeat's DB](images\CineSeat_DB-ER_diagram-2024-08-31-131511.png)
+![ER diagram for CineSeat's DB](images/CineSeat_DB-ER_diagram-2024-08-31-131511.png)
 
     ### Database Schema Definition
 
@@ -111,6 +113,7 @@ Movie Ticket Booking System
                 seat_number VARCHAR(10),
                 status VARCHAR(20)
             );
+            ```
 
 
 For more details on system design and implementation, please refer to the [Detailed Documentation](docs/detailed_documentation.md).
