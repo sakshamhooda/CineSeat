@@ -1,6 +1,8 @@
 # CineSeat
 Movie Ticket Booking System
 
+# ![For Latest Update](https://www.github.com/sakshamhooda/CineSeat)
+
 ## System Design
 
  - **Frontend:** A user interface for customers to browse movies, view showtimes, and make reservations.
