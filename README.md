@@ -1,7 +1,7 @@
 # CineSeat
 Movie Ticket Booking System
 
-![For Latest Update](https://www.github.com/sakshamhooda/CineSeat)
+[For Latest Update](https://www.github.com/sakshamhooda/CineSeat)
 
 ## System Design
 
